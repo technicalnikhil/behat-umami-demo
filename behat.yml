@@ -1,0 +1,79 @@
+default:
+  suites:
+    default:
+      paths:
+<<<<<<< HEAD
+        - '%paths.base%/features'
+=======
+        - '%paths.base%/features/'
+>>>>>>> 8c013b8 (First umami behat test script)
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  formatters:
+    html:
+      output_path: build/html/behat
+  extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+    DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+    Drupal\MinkExtension:
+<<<<<<< HEAD
+      ajax_timeout: 15
+      goutte: ~
+      browser_name: chrome
+      files_path: “%paths.base%/media”
+      javascript_session: default
+      selenium2: ~
+      base_url: http://automationpractice.com/index.php
+=======
+      goutte: ~
+      browser_name: chrome
+      files_path: '%paths.base%/media'
+      javascript_session: selenium2
+      selenium2:
+        wd_host: http://192.168.0.101:4444
+        browser: chrome
+        capabilities:
+          chrome:
+            switches:
+              #- "--headless"
+              - "--disable-gpu"
+              - "--no-sandbox"
+              - "--window-size=1920,1080"
+      base_url: http://localhost:8888/umami
+>>>>>>> 8c013b8 (First umami behat test script)
+      sessions:
+        default:
+          chrome:
+            api_url: "http://localhost:9222"
+    Drupal\DrupalExtension:
+      blackbox: ~
+<<<<<<< HEAD
+=======
+      api_driver: drupal
+      drush_driver: drush
+      drupal:
+        drupal_root: '%paths.base%'
+      drush:
+        root: web
+>>>>>>> 8c013b8 (First umami behat test script)
+    Bex\Behat\ScreenshotExtension:
+      screenshot_taking_mode: failed_steps
+      image_drivers:
+        local:
+          screenshot_directory: "%paths.base%/media"
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 8c013b8 (First umami behat test script)
