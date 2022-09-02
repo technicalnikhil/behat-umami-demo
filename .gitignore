@@ -48,4 +48,8 @@ themes/*
 sites/*
 .DS_Store
 robots.txt
+INSTALL.txt
+LICENSE.txt
+autoload.php
+example.gitignore
 
